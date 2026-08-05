@@ -17,7 +17,7 @@ hl.monitor({
     position = "-1920x0",
     scale    = "1",
     vrr      = 0,
-    disabled = true,
+    disabled = false,
 })
 
 ---------------------
@@ -42,6 +42,9 @@ local menu        = "hyprlauncher"
 hl.on("hyprland.start", function () 
    hl.exec_cmd("xrandr --output DP-1 --primary --output HDMI-A-1 --left-of DP-1")
    hl.exec_cmd("noctalia")
+   -- Использование hl.dsp для фокуса
+   hl.dsp.focus({ monitor = "DP-1" })
+   hl.dsp.focus({ workspace = 1 })
 end)
 
 
@@ -315,6 +318,8 @@ hl.window_rule({
 })
 
 hl.workspace_rule({ workspace = "1", monitor = "DP-1", persistent = true })
+hl.workspace_rule({ workspace = "2", monitor = "HDMI-A-1", persistent = true })
+
 
 -- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
 -- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
