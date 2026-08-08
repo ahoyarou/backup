@@ -1,0 +1,328 @@
+config_version = 8
+
+[bar]
+order = [ "Eva" ]
+
+    [bar.Eva]
+    end = [ "tray", "privacy", "bluetooth", "output_volume", "clipboard", "notifications" ]
+    font_family = "Adwaita Sans"
+    margin_edge = 5
+    margin_ends = 5
+    position = "bottom"
+    radius = 15
+    start = [ "launcher", "workspaces" ]
+
+        [bar.Eva.dead_zone.actions]
+        middle = "exec noctalia msg panel-toggle noctalia/wallhaven:browser"
+
+[control_center]
+sidebar = "none"
+sidebar_section = "none"
+width = 850
+
+    [[control_center.shortcuts]]
+    type = "bluetooth"
+
+    [[control_center.shortcuts]]
+    type = "power_profile"
+
+[desktop_widgets]
+schema_version = 2
+widget_order = [
+    "desktop-widget-0000000000000001",
+    "desktop-widget-0000000000000002",
+    "desktop-widget-0000000000000003",
+    "desktop-widget-0000000000000004"
+]
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000001]
+    box_height = 96.0
+    box_width = 208.0
+    cx = 1802.4000244140625
+    cy = 60.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "clock"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000001.settings]
+        background_opacity = 1.0
+        background_radius = 15
+        center_text = true
+        font_family = ""
+
+    [desktop_widgets.widget.desktop-widget-0000000000000002]
+    box_height = 176.0
+    box_width = 208.0
+    cx = 1802.4000244140625
+    cy = 212.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "weather"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000002.settings]
+        background = true
+        background_color = "surface"
+        background_opacity = 1.0
+        background_padding = 10
+        background_radius = 15
+        color = "on_surface"
+        font_family = ""
+        forecast_days = 3
+        shadow = true
+        show_forecast = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000003]
+    box_height = 128.0
+    box_width = 208.0
+    cx = 1802.4000244140625
+    cy = 380.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "sysmon"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000003.settings]
+        background_opacity = 1.0
+        stat = "cpu_temp"
+        stat2 = "gpu_temp"
+
+    [desktop_widgets.widget.desktop-widget-0000000000000004]
+    box_height = 128.0
+    box_width = 208.0
+    cx = 1802.4000244140625
+    cy = 524.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "sysmon"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000004.settings]
+        background_opacity = 1.0
+        background_radius = 15
+        network_speed_unit = "mb"
+        stat = "net_rx"
+        stat2 = "net_tx"
+
+[idle]
+pre_action_fade_seconds = 0
+
+[location]
+auto_locate = true
+
+[lockscreen]
+enabled = false
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@DP-1", "lockscreen-login-box@HDMI-A-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    output = "DP-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[notification]
+background_opacity = 0.86999998055398464
+offset_x = 5
+offset_y = 5
+position = "bottom_right"
+show_actions = false
+
+[osd]
+background_opacity = 0.86999998055398464
+offset_x = 5
+offset_y = 5
+position = "bottom_center"
+position_vertical = "bottom_center"
+
+[plugins]
+auto_update = true
+enabled = [ "noctalia/wallhaven" ]
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/official-plugins"
+    name = "official"
+
+    [[plugins.source]]
+    enabled = false
+    kind = "git"
+    location = "https://github.com/noctalia-dev/community-plugins"
+    name = "community"
+
+[shell]
+avatar_path = "/home/intimki/Завантажене/76da77f2bcdf6074adec50cff87a6af5.jpg"
+clipboard_history_max_entries = 10
+font_family = "Adwaita Sans"
+password_style = "random"
+polkit_agent = true
+
+    [shell.launcher]
+    categories = false
+    show_icons = false
+    sort_by_usage = false
+
+    [shell.panel]
+    open_near_click_control_center = true
+    session_placement = "floating"
+    session_position = "center"
+
+    [shell.screenshot]
+    directory = "/home/intimki/Картинки"
+
+    [shell.session]
+    show_shortcuts = false
+
+        [[shell.session.actions]]
+        action = "lock"
+        countdown_seconds = 0.0
+        enabled = false
+        shortcut = "1"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "logout"
+        countdown_seconds = 0.0
+        enabled = false
+        shortcut = "2"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "lock_and_suspend"
+        countdown_seconds = 0.0
+        enabled = false
+        shortcut = "3"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "reboot"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "4"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "shutdown"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "5"
+        variant = "destructive"
+
+    [shell.shadow]
+    direction = "center"
+
+[theme]
+builtin = "Ayu"
+community_palette = "Ayu Green"
+source = "community"
+
+    [theme.templates]
+    builtin_ids = [ "gtk3", "gtk4", "hyprland", "kitty", "qt" ]
+    enable_community_templates = false
+
+[wallpaper]
+directory = "/home/intimki/Картинки"
+directory_dark = "/home/intimki/Картинки"
+directory_light = "/home/intimki/Картинки"
+
+    [wallpaper.default]
+    path = "/home/intimki/Картинки/wallhaven-yq9x9k.png"
+
+    [wallpaper.last]
+    path = "/home/intimki/Картинки/wallhaven-yq9x9k.png"
+
+    [wallpaper.monitors.DP-1]
+    path = "/home/intimki/Картинки/wallhaven-yq9x9k.png"
+
+    [wallpaper.monitors.HDMI-A-1]
+    path = "/home/intimki/Картинки/wallhaven-yq9x9k.png"
+
+[weather]
+refresh_minutes = 5
+
+[widget.audio_visualizer]
+capsule = true
+mirrored = false
+show_when_idle = true
+
+[widget.bluetooth]
+hide_when_no_connected_device = true
+
+[widget.clock]
+anchor = true
+
+[widget.launcher]
+glyph = "terminal"
+
+[widget.notifications]
+hide_when_no_unread = true
+
+[widget.privacy]
+active_color = "secondary"
+hide_inactive = true
+
+[widget.screenshot]
+glyph = "cut"
+
+[widget.tray]
+drawer = true
+
+[widget.weather]
+show_condition = false
+
+[widget.workspaces]
+focused_output_only = true
