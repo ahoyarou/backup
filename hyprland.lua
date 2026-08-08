@@ -290,6 +290,3 @@ hl.window_rule({
 
 -- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
 -- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
-
--- For Noctalia Color templates
-require("noctalia").apply_theme()
