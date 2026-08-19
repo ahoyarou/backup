@@ -86,18 +86,9 @@ hl.config({
     },
     decoration = {
         rounding = 15,
-        rounding_power = 2,
-        active_opacity = 1.0,
-        inactive_opacity = 1.0,
-        shadow = {
-            enabled = true
-        },
         blur = {
             enabled = false
         }
-    },
-    animations = {
-        enabled = true
     },
     dwindle = {
         preserve_split = true
