@@ -56,9 +56,9 @@ hl.env("CUDA_DISABLE_PERF_BOOST", "1")
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "wayland")
 
 hl.env("HOST_LC_ALL", "uk_UA.UTF-8")
-hl.env("PROTON_DLSS_UPGRADE", "1")
 hl.env("PROTON_DXVK_LOWLATENCY", "1")
 hl.env("DXVK_FRAME_PACE", "min-latency")
+hl.env("PROTON_DLSS_UPGRADE", "1")
 hl.env("DXVK_NVAPI_DRS_SETTINGS", "NGX_DLSS_SR_OVERRIDE_RENDER_PRESET_SELECTION=J")
 
 hl.env("GDK_BACKEND", "wayland,x11,*")
@@ -99,7 +99,8 @@ hl.config({
         follow_mouse = 1,
         force_no_accel = true,
         sensitivity = 0,
-        accel_profile = "flat"
+        accel_profile = "flat",
+        emulate_discrete_scroll = 0
     },
     cursor = {
         default_monitor = "DP-1",
@@ -165,7 +166,13 @@ hl.workspace_rule({ workspace = "2", monitor = "HDMI-A-1", persistent = true })
 hl.workspace_rule({ workspace = "3", monitor = "DP-1" })
 
 hl.window_rule({
-    match = { class = "^steam_app_.*|cs2" },
+    match = { class = "org.telegram.desktop" },
+    no_screen_share = true
+})
+
+
+hl.window_rule({
+    match = { class = "^steam_app_.*|^cs2|^Minecraft.*" },
     workspace = 3,
     content = "game",
     immediate = true,

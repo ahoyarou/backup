@@ -1,13 +1,15 @@
-config_version = 8
+config_version = 13
 
 [bar]
 order = [ "Eva" ]
 
     [bar.Eva]
-    end = [ "tray", "privacy", "bluetooth", "output_volume", "clipboard", "notifications" ]
+    end = [ "media", "tray", "bluetooth", "volume", "clipboard", "notifications" ]
     font_family = "Adwaita Sans"
     margin_edge = 5
     margin_ends = 5
+    padding = 11
+    panel_overlap = 0
     position = "bottom"
     radius = 15
     start = [ "launcher", "workspaces" ]
@@ -18,7 +20,10 @@ order = [ "Eva" ]
 [control_center]
 sidebar = "none"
 sidebar_section = "none"
-width = 850
+width = 820
+
+    [control_center.calendar]
+    show_events_card = false
 
     [[control_center.shortcuts]]
     type = "bluetooth"
@@ -26,85 +31,20 @@ width = 850
     [[control_center.shortcuts]]
     type = "power_profile"
 
+    [[control_center.shortcuts]]
+    type = "notification"
+
 [desktop_widgets]
+enabled = false
 schema_version = 2
-widget_order = [
-    "desktop-widget-0000000000000001",
-    "desktop-widget-0000000000000002",
-    "desktop-widget-0000000000000003",
-    "desktop-widget-0000000000000004"
-]
+widget_order = []
 
     [desktop_widgets.grid]
     cell_size = 16
     major_interval = 4
     visible = true
 
-    [desktop_widgets.widget.desktop-widget-0000000000000001]
-    box_height = 96.0
-    box_width = 208.0
-    cx = 1802.4000244140625
-    cy = 60.0
-    output = "HDMI-A-1"
-    rotation = 0.0
-    type = "clock"
-
-        [desktop_widgets.widget.desktop-widget-0000000000000001.settings]
-        background_opacity = 1.0
-        background_radius = 15
-        center_text = true
-        font_family = ""
-
-    [desktop_widgets.widget.desktop-widget-0000000000000002]
-    box_height = 176.0
-    box_width = 208.0
-    cx = 1802.4000244140625
-    cy = 212.0
-    output = "HDMI-A-1"
-    rotation = 0.0
-    type = "weather"
-
-        [desktop_widgets.widget.desktop-widget-0000000000000002.settings]
-        background = true
-        background_color = "surface"
-        background_opacity = 1.0
-        background_padding = 10
-        background_radius = 15
-        color = "on_surface"
-        font_family = ""
-        forecast_days = 3
-        shadow = true
-        show_forecast = true
-
-    [desktop_widgets.widget.desktop-widget-0000000000000003]
-    box_height = 128.0
-    box_width = 208.0
-    cx = 1802.4000244140625
-    cy = 380.0
-    output = "HDMI-A-1"
-    rotation = 0.0
-    type = "sysmon"
-
-        [desktop_widgets.widget.desktop-widget-0000000000000003.settings]
-        background_opacity = 1.0
-        stat = "cpu_temp"
-        stat2 = "gpu_temp"
-
-    [desktop_widgets.widget.desktop-widget-0000000000000004]
-    box_height = 128.0
-    box_width = 208.0
-    cx = 1802.4000244140625
-    cy = 524.0
-    output = "HDMI-A-1"
-    rotation = 0.0
-    type = "sysmon"
-
-        [desktop_widgets.widget.desktop-widget-0000000000000004.settings]
-        background_opacity = 1.0
-        background_radius = 15
-        network_speed_unit = "mb"
-        stat = "net_rx"
-        stat2 = "net_tx"
+    [desktop_widgets.widget]
 
 [idle]
 pre_action_fade_seconds = 0
@@ -131,6 +71,8 @@ widget_order = [ "lockscreen-login-box@DP-1", "lockscreen-login-box@HDMI-A-1" ]
     cx = 960.0
     cy = 898.0
     output = "DP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "login_box"
 
@@ -156,6 +98,8 @@ widget_order = [ "lockscreen-login-box@DP-1", "lockscreen-login-box@HDMI-A-1" ]
     cx = 960.0
     cy = 898.0
     output = "HDMI-A-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "login_box"
 
@@ -176,21 +120,18 @@ widget_order = [ "lockscreen-login-box@DP-1", "lockscreen-login-box@HDMI-A-1" ]
         show_weather = true
 
 [notification]
-background_opacity = 0.86999998055398464
-offset_x = 5
-offset_y = 5
+offset_x = 10
+offset_y = 10
 position = "bottom_right"
 show_actions = false
 
 [osd]
-background_opacity = 0.86999998055398464
-offset_x = 5
-offset_y = 5
+offset_x = 10
+offset_y = 10
 position = "bottom_center"
 position_vertical = "bottom_center"
 
 [plugins]
-auto_update = true
 enabled = [ "noctalia/wallhaven" ]
 
     [[plugins.source]]
@@ -205,7 +146,7 @@ enabled = [ "noctalia/wallhaven" ]
     name = "community"
 
 [shell]
-avatar_path = "/home/intimki/Завантажене/76da77f2bcdf6074adec50cff87a6af5.jpg"
+clipboard_confirm_clear_history = false
 clipboard_history_max_entries = 10
 font_family = "Adwaita Sans"
 password_style = "random"
@@ -213,16 +154,13 @@ polkit_agent = true
 
     [shell.launcher]
     categories = false
+    show_app_origin_indicator = false
     show_icons = false
     sort_by_usage = false
 
-    [shell.panel]
-    open_near_click_control_center = true
-    session_placement = "floating"
-    session_position = "center"
-
     [shell.screenshot]
     directory = "/home/intimki/Картинки"
+    save_to_file = false
 
     [shell.session]
     show_shortcuts = false
@@ -263,11 +201,14 @@ polkit_agent = true
         variant = "destructive"
 
     [shell.shadow]
+    alpha = 0.4999999888241291
     direction = "center"
 
+[system.monitor]
+enabled = false
+
 [theme]
-builtin = "Ayu"
-community_palette = "Ayu Green"
+community_palette = "Mizuki-Akiyama"
 source = "community"
 
     [theme.templates]
@@ -280,49 +221,32 @@ directory_dark = "/home/intimki/Картинки"
 directory_light = "/home/intimki/Картинки"
 
     [wallpaper.default]
-    path = "/home/intimki/Картинки/wallhaven-yq9x9k.png"
+    path = "/home/intimki/Картинки/wallhaven-3lw5g9.jpg"
 
     [wallpaper.last]
-    path = "/home/intimki/Картинки/wallhaven-yq9x9k.png"
+    path = "/home/intimki/Картинки/wallhaven-3lw5g9.jpg"
 
     [wallpaper.monitors.DP-1]
-    path = "/home/intimki/Картинки/wallhaven-yq9x9k.png"
+    path = "/home/intimki/Картинки/wallhaven-3lw5g9.jpg"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/intimki/Картинки/wallhaven-yq9x9k.png"
-
-[weather]
-refresh_minutes = 5
-
-[widget.audio_visualizer]
-capsule = true
-mirrored = false
-show_when_idle = true
+    path = "/home/intimki/Картинки/wallhaven-3lw5g9.jpg"
 
 [widget.bluetooth]
 hide_when_no_connected_device = true
 
 [widget.clock]
-anchor = true
+format = "%a. %-e, %H:%M"
 
 [widget.launcher]
 glyph = "terminal"
 
+[widget.media]
+hide_when_no_media = true
+title_scroll = "on_hover"
+
 [widget.notifications]
 hide_when_no_unread = true
 
-[widget.privacy]
-active_color = "secondary"
-hide_inactive = true
-
-[widget.screenshot]
-glyph = "cut"
-
 [widget.tray]
 drawer = true
-
-[widget.weather]
-show_condition = false
-
-[widget.workspaces]
-focused_output_only = true
